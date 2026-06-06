@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 2.1.0-preview+a777a5df7fcf83c5797e6215b2dd953ad332730e  Build Version: 2.1.0.0
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="star_">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00418093398411766 1.69153799972621E-06 0.00470569916768271"
+        rpy="0 0 0" />
+      <mass
+        value="0.0936839180393403" />
+      <inertia
+        ixx="6.42702477347485E-05"
+        ixy="6.66890540853502E-10"
+        ixz="-8.08944848237334E-08"
+        iyy="6.7247351006805E-05"
+        iyz="-5.95501996520373E-11"
+        izz="0.000121994615812578" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="l1">
+    <inertial>
+      <origin
+        xyz="-1.91919613791447E-05 0.000383275545437857 0.0132943739623144"
+        rpy="0 0 0" />
+      <mass
+        value="0.0570537789750849" />
+      <inertia
+        ixx="1.82478250442438E-05"
+        ixy="-3.33602048925647E-08"
+        ixz="-3.7212298473316E-10"
+        iyy="1.39560065233058E-05"
+        iyz="-2.92175842064467E-08"
+        izz="2.30548729305443E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j1"
+    type="revolute">
+    <origin
+      xyz="-0.000949892620019543 0 0.028"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="l2">
+    <inertial>
+      <origin
+        xyz="-0.000792701804856216 0.0197935067680088 0.0993882135049424"
+        rpy="0 0 0" />
+      <mass
+        value="0.202392084161304" />
+      <inertia
+        ixx="0.000211446677056536"
+        ixy="-6.98632494026753E-07"
+        ixz="2.20128727604779E-06"
+        iyy="0.000182054146330372"
+        iyz="4.06139441156158E-07"
+        izz="8.97806506571594E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j2"
+    type="revolute">
+    <origin
+      xyz="-8.69818051223159E-05 -0.0260000991690266 0.0374011585138861"
+      rpy="0 0 0" />
+    <parent
+      link="l1" />
+    <child
+      link="l2" />
+    <axis
+      xyz="-0.00768358184423042 -0.999970480849331 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="l3">
+    <inertial>
+      <origin
+        xyz="0.0626838451084341 -0.013374474303397 -0.00055111641762251"
+        rpy="0 0 0" />
+      <mass
+        value="0.21202882538679" />
+      <inertia
+        ixx="0.00015381544467866"
+        ixy="-4.25845151922456E-07"
+        ixz="4.29738735681153E-05"
+        iyy="0.000193077034504643"
+        iyz="1.51016830583816E-07"
+        izz="0.000111151250115021" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j3"
+    type="revolute">
+    <origin
+      xyz="-0.00096191340331378 0.0357084450233305 0.163035991367821"
+      rpy="0 0 0" />
+    <parent
+      link="l2" />
+    <child
+      link="l3" />
+    <axis
+      xyz="-0.00768358184422859 -0.999970480849331 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="l4">
+    <inertial>
+      <origin
+        xyz="0.0497386571922581 -0.0224088104004599 -0.0609262562328686"
+        rpy="0 0 0" />
+      <mass
+        value="0.0896047143366241" />
+      <inertia
+        ixx="1.86926252695652E-05"
+        ixy="1.2785373644018E-07"
+        ixz="1.16858530646368E-06"
+        iyy="2.02414617982055E-05"
+        iyz="5.93047033219114E-08"
+        izz="1.86129057008722E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://star_/meshes/l4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j4"
+    type="revolute">
+    <origin
+      xyz="0.121630056473796 0.000323108572764387 -0.0765398613986167"
+      rpy="0 0 0" />
+    <parent
+      link="l3" />
+    <child
+      link="l4" />
+    <axis
+      xyz="-0.00768358184430891 -0.999970480849331 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
