@@ -1,0 +1,1 @@
+/home/hzr/arm_xingzai/arm/devel/.private/star_/lib/pkgconfig/star_.pc

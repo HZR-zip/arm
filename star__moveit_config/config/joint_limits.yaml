@@ -1,0 +1,25 @@
+# joint_limits.yaml
+# Joint velocity/acceleration limits for the star_ arm.
+# Used by MoveIt trajectory execution.
+
+joint_limits:
+  j1:
+    has_velocity_limits: true
+    max_velocity: 3.14       # ~180 deg/s
+    has_acceleration_limits: true
+    max_acceleration: 6.28
+  j2:
+    has_velocity_limits: true
+    max_velocity: 3.14
+    has_acceleration_limits: true
+    max_acceleration: 6.28
+  j3:
+    has_velocity_limits: true
+    max_velocity: 3.14
+    has_acceleration_limits: true
+    max_acceleration: 6.28
+  j4:
+    has_velocity_limits: true
+    max_velocity: 3.14
+    has_acceleration_limits: true
+    max_acceleration: 6.28

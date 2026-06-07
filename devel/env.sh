@@ -1,0 +1,1 @@
+/home/hzr/arm_xingzai/arm/devel/.private/catkin_tools_prebuild/env.sh

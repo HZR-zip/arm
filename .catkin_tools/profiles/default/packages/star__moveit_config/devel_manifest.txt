@@ -1,0 +1,4 @@
+star__moveit_config
+/home/hzr/arm_xingzai/arm/devel/.private/star__moveit_config/lib/pkgconfig/star__moveit_config.pc /home/hzr/arm_xingzai/arm/devel/lib/pkgconfig/star__moveit_config.pc
+/home/hzr/arm_xingzai/arm/devel/.private/star__moveit_config/share/star__moveit_config/cmake/star__moveit_configConfig.cmake /home/hzr/arm_xingzai/arm/devel/share/star__moveit_config/cmake/star__moveit_configConfig.cmake
+/home/hzr/arm_xingzai/arm/devel/.private/star__moveit_config/share/star__moveit_config/cmake/star__moveit_configConfig-version.cmake /home/hzr/arm_xingzai/arm/devel/share/star__moveit_config/cmake/star__moveit_configConfig-version.cmake

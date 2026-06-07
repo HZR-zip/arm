@@ -1,0 +1,1 @@
+/home/hzr/arm_xingzai/arm/devel/.private/star_/share/star_/cmake/star_Config.cmake

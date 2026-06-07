@@ -1,0 +1,19 @@
+<launch>
+  <!-- ========== Trajectory Execution ==========
+       Uses the fake controller manager for simulation. -->
+
+  <group ns="move_group">
+    <param name="moveit_controller_manager"
+           value="moveit_fake_controller_manager/MoveItFakeControllerManager" />
+
+    <!-- Fake controller list must be under move_group namespace -->
+    <rosparam param="controller_list">
+      - name: fake_arm_controller
+        joints:
+          - j1
+          - j2
+          - j3
+          - j4
+    </rosparam>
+  </group>
+</launch>

@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-g++ -fPIC   -shared -Wl,-soname,libgmock.so -o ../lib/libgmock.so CMakeFiles/gmock.dir/src/gmock-all.cc.o  -Wl,-rpath,/home/hzr/arm_xingzai/arm/build/star__moveit_config/gtest/lib ../lib/libgtest.so -lpthread 

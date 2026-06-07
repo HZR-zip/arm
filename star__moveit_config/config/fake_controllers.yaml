@@ -1,0 +1,13 @@
+# fake_controllers.yaml
+# Fake controller configuration for RViz-only simulation (no real hardware).
+# The fake controller manager "executes" trajectories by interpolating
+# joint states, so MoveIt can plan and visualize motion.
+
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - j1
+      - j2
+      - j3
+      - j4
+    type: FollowJointTrajectory

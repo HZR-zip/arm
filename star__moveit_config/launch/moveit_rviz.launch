@@ -1,0 +1,42 @@
+<launch>
+  <!-- ========== MoveIt RViz ==========
+       Starts RViz pre-configured with the MoveIt MotionPlanning plugin. -->
+  <arg name="config" default="true" />
+  <arg name="debug" default="false" />
+
+  <arg
+    unless="$(arg config)"
+    name="command_args"
+    value="" />
+  <arg
+    if="$(arg config)"
+    name="command_args"
+    value="-d $(find star__moveit_config)/launch/moveit.rviz" />
+
+  <!-- Joint State Publisher: reads URDF joint limits and provides a GUI -->
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui">
+    <param name="use_gui" value="true" />
+    <rosparam param="source_list">
+      - /move_group/fake_controller_joint_states
+    </rosparam>
+  </node>
+
+  <!-- Robot State Publisher: subscribes to joint_states, publishes TF -->
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher">
+    <param name="publish_frequency" value="50" />
+  </node>
+
+  <!-- RViz with preconfigured MotionPlanning plugin -->
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="$(arg command_args)"
+    output="screen" />
+</launch>

@@ -1,0 +1,13 @@
+# controllers.yaml — 真实舵机控制器
+# MoveIt 通过 FollowJointTrajectory action 发送轨迹给驱动节点
+
+controller_list:
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - j1
+      - j2
+      - j3
+      - j4

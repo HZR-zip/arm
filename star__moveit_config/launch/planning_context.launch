@@ -1,0 +1,30 @@
+<launch>
+  <!-- ========== Planning Context ==========
+       Loads the robot description (URDF) and semantic description (SRDF)
+       onto the ROS parameter server. -->
+  <arg name="load_robot_description" default="true" />
+
+  <!-- Robot description from URDF -->
+  <param
+    name="/robot_description"
+    textfile="$(find star_)/urdf/star_.urdf" />
+
+  <!-- Semantic description -->
+  <param
+    name="/robot_description_semantic"
+    textfile="$(find star__moveit_config)/config/star_.srdf" />
+
+  <!-- Kinematics config -->
+  <group ns="robot_description_kinematics">
+    <rosparam
+      command="load"
+      file="$(find star__moveit_config)/config/kinematics.yaml" />
+  </group>
+
+  <!-- Joint limits -->
+  <group ns="robot_description_planning">
+    <rosparam
+      command="load"
+      file="$(find star__moveit_config)/config/joint_limits.yaml" />
+  </group>
+</launch>

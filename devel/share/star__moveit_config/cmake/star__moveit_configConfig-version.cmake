@@ -1,0 +1,1 @@
+/home/hzr/arm_xingzai/arm/devel/.private/star__moveit_config/share/star__moveit_config/cmake/star__moveit_configConfig-version.cmake

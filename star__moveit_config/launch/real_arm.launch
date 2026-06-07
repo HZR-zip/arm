@@ -1,0 +1,29 @@
+<launch>
+  <!-- ========== 真实机械臂启动 ==========
+       先修改 scripts/servo_driver.py 里的串口参数和协议函数, 然后:
+         roslaunch star__moveit_config real_arm.launch
+
+       终端2 运行控制脚本:
+         python3 /home/hzr/arm_xingzai/arm/pick_and_place.py
+  -->
+
+  <!-- 1. 串口舵机驱动 (FollowJointTrajectory action server) -->
+  <node name="servo_driver" pkg="star__moveit_config"
+        type="servo_driver.py" output="screen" />
+
+  <!-- 2. robot_state_publisher (URDF -> TF) -->
+  <param name="robot_description"
+         command="cat $(find star__moveit_config)/../star_/urdf/star_.urdf" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher" />
+
+  <!-- 3. Move Group (真实控制器) -->
+  <include file="$(find star__moveit_config)/launch/move_group_real.launch">
+    <arg name="debug" value="false" />
+  </include>
+
+  <!-- 4. RViz (可选，调试用) -->
+  <include file="$(find star__moveit_config)/launch/moveit_rviz.launch">
+    <arg name="debug" value="false" />
+  </include>
+</launch>

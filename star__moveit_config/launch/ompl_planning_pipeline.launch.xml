@@ -1,0 +1,11 @@
+<launch>
+  <!-- ========== OMPL Planning Pipeline ========== -->
+  <group ns="move_group">
+    <rosparam
+      command="load"
+      file="$(find star__moveit_config)/config/ompl_planning.yaml" />
+
+    <!-- Which pipeline to use -->
+    <param name="default_planning_pipeline" value="ompl" />
+  </group>
+</launch>

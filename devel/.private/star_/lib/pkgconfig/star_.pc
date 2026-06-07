@@ -1,0 +1,8 @@
+prefix=/home/hzr/arm_xingzai/arm/devel/.private/star_
+
+Name: star_
+Description: Description of star_
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

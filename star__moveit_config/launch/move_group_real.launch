@@ -1,0 +1,25 @@
+<launch>
+  <!-- ========== Move Group for REAL robot ========== -->
+  <arg name="pipeline" default="ompl" />
+  <arg name="debug" default="false" />
+
+  <!-- Load robot description -->
+  <include file="$(find star__moveit_config)/launch/planning_context.launch" />
+
+  <node name="move_group" pkg="moveit_ros_move_group" type="move_group"
+        output="screen" args="--debug $(arg debug)">
+    <remap from="joint_states" to="/joint_states" />
+
+    <!-- ★ 关键：从 fake 改成 simple controller manager -->
+    <param name="moveit_controller_manager"
+           value="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+
+    <!-- 加载真实控制器配置 -->
+    <rosparam file="$(find star__moveit_config)/config/controllers.yaml" />
+
+    <!-- 其他配置 -->
+    <param name="default_planning_pipeline" value="ompl" />
+    <rosparam command="load"
+              file="$(find star__moveit_config)/config/ompl_planning.yaml" />
+  </node>
+</launch>

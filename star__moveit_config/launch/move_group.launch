@@ -1,0 +1,47 @@
+<launch>
+  <!-- ========== Move Group ========== -->
+  <arg name="pipeline" default="ompl" />
+  <arg name="allow_trajectory_execution" default="true" />
+  <arg name="debug" default="false" />
+
+  <!-- Load robot description context -->
+  <include
+    file="$(find star__moveit_config)/launch/planning_context.launch" />
+
+  <!-- Move Group node -->
+  <!-- All private params are loaded inside the node tag so they are
+       available synchronously when the move_group constructor runs. -->
+  <node
+    name="move_group"
+    pkg="moveit_ros_move_group"
+    type="move_group"
+    output="screen"
+    args="--debug $(arg debug)">
+    <remap from="joint_states" to="/joint_states" />
+
+    <!-- Controller manager -->
+    <param name="moveit_controller_manager"
+           value="moveit_fake_controller_manager/MoveItFakeControllerManager" />
+
+    <!-- Controller list for fake controller -->
+    <rosparam param="controller_list">
+      - name: fake_arm_controller
+        joints:
+          - j1
+          - j2
+          - j3
+          - j4
+    </rosparam>
+
+    <!-- Default planning pipeline -->
+    <param name="default_planning_pipeline" value="ompl" />
+
+    <!-- Planning pipeline config (loaded as node-private param, synchronous) -->
+    <rosparam command="load"
+              file="$(find star__moveit_config)/config/ompl_planning.yaml" />
+
+    <!-- Allow trajectory execution -->
+    <param name="allow_trajectory_execution"
+           value="$(arg allow_trajectory_execution)" />
+  </node>
+</launch>

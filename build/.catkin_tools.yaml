@@ -1,0 +1,6 @@
+devel_space: /home/hzr/arm_xingzai/arm/devel
+install: false
+install_space: /home/hzr/arm_xingzai/arm/install
+profile: default
+source_space: /home/hzr/arm_xingzai/arm/src
+workspace: /home/hzr/arm_xingzai/arm

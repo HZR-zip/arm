@@ -1,0 +1,90 @@
+# OMPL planning pipeline configuration for MoveIt 1
+# The planning_pipelines structure is required by MoveIt 1's PlanningPipeline loader.
+
+planning_pipelines:
+  ompl:
+    planning_plugin: ompl_interface/OMPLPlanner
+    request_adapters: "default_planner_request_adapters/AddTimeOptimalParameterization default_planner_request_adapters/ResolveConstraintFrames default_planner_request_adapters/FixWorkspaceBounds default_planner_request_adapters/FixStartStateBounds default_planner_request_adapters/FixStartStateCollision default_planner_request_adapters/FixStartStatePathConstraints"
+    start_state_max_bounds_error: 0.1
+    planner_configs:
+      SBL:
+        type: geometric::SBL
+        range: 0.0
+      EST:
+        type: geometric::EST
+        range: 0.0
+      LBKPIECE:
+        type: geometric::LBKPIECE
+        range: 0.0
+      BKPIECE:
+        type: geometric::BKPIECE
+        range: 0.0
+      KPIECE:
+        type: geometric::KPIECE
+        range: 0.0
+      RRT:
+        type: geometric::RRT
+        range: 0.0
+      RRTConnect:
+        type: geometric::RRTConnect
+        range: 0.0
+      RRTstar:
+        type: geometric::RRTstar
+        range: 0.0
+      TRRT:
+        type: geometric::TRRT
+        range: 0.0
+      PRM:
+        type: geometric::PRM
+        range: 0.0
+      PRMstar:
+        type: geometric::PRMstar
+        range: 0.0
+      FMT:
+        type: geometric::FMT
+        range: 0.0
+      BFMT:
+        type: geometric::BFMT
+        range: 0.0
+      PDST:
+        type: geometric::PDST
+        range: 0.0
+      STRIDE:
+        type: geometric::STRIDE
+        range: 0.0
+      BiTRRT:
+        type: geometric::BiTRRT
+        range: 0.0
+      LazyRRT:
+        type: geometric::LazyRRT
+        range: 0.0
+      SPARS:
+        type: geometric::SPARS
+        range: 0.0
+      SPARStwo:
+        type: geometric::SPARStwo
+        range: 0.0
+    arm:
+      default_planner_config: RRTConnect
+      planner_configs:
+        - SBL
+        - EST
+        - LBKPIECE
+        - BKPIECE
+        - KPIECE
+        - RRT
+        - RRTConnect
+        - RRTstar
+        - TRRT
+        - PRM
+        - PRMstar
+        - FMT
+        - BFMT
+        - PDST
+        - STRIDE
+        - BiTRRT
+        - LazyRRT
+        - SPARS
+        - SPARStwo
+      projection_evaluator: joints(j1,j2)
+      longest_valid_segment_fraction: 0.005

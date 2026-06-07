@@ -1,0 +1,58 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/hzr/arm_xingzai/arm/build/star_/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7fa32/fast && /usr/bin/make -f CMakeFiles/cmTC_7fa32.dir/build.make CMakeFiles/cmTC_7fa32.dir/build
+make[1]: 进入目录“/home/hzr/arm_xingzai/arm/build/star_/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_7fa32.dir/src.c.o
+/usr/bin/arm-linux-gnueabihf-gcc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7fa32.dir/src.c.o   -c /home/hzr/arm_xingzai/arm/build/star_/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_7fa32
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fa32.dir/link.txt --verbose=1
+/usr/bin/arm-linux-gnueabihf-gcc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_7fa32.dir/src.c.o  -o cmTC_7fa32 
+/usr/lib/gcc-cross/arm-linux-gnueabihf/9/../../../../arm-linux-gnueabihf/bin/ld: CMakeFiles/cmTC_7fa32.dir/src.c.o: in function `main':
+src.c:(.text+0x36): undefined reference to `pthread_create'
+/usr/lib/gcc-cross/arm-linux-gnueabihf/9/../../../../arm-linux-gnueabihf/bin/ld: src.c:(.text+0x3e): undefined reference to `pthread_detach'
+/usr/lib/gcc-cross/arm-linux-gnueabihf/9/../../../../arm-linux-gnueabihf/bin/ld: src.c:(.text+0x48): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_7fa32.dir/build.make:87：cmTC_7fa32] 错误 1
+make[1]: 离开目录“/home/hzr/arm_xingzai/arm/build/star_/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_7fa32/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/hzr/arm_xingzai/arm/build/star_/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_12190/fast && /usr/bin/make -f CMakeFiles/cmTC_12190.dir/build.make CMakeFiles/cmTC_12190.dir/build
+make[1]: 进入目录“/home/hzr/arm_xingzai/arm/build/star_/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_12190.dir/CheckFunctionExists.c.o
+/usr/bin/arm-linux-gnueabihf-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_12190.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_12190
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12190.dir/link.txt --verbose=1
+/usr/bin/arm-linux-gnueabihf-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_12190.dir/CheckFunctionExists.c.o  -o cmTC_12190  -lpthreads 
+/usr/lib/gcc-cross/arm-linux-gnueabihf/9/../../../../arm-linux-gnueabihf/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_12190.dir/build.make:87：cmTC_12190] 错误 1
+make[1]: 离开目录“/home/hzr/arm_xingzai/arm/build/star_/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_12190/fast] 错误 2
+
+
+

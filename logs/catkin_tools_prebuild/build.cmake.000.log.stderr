@@ -1,0 +1,13 @@
+CMake Error at /opt/ros/noetic/share/catkin/cmake/assert.cmake:17 (message):
+
+
+  Assertion failed: check for file existence, but filename
+  (RT_LIBRARY-NOTFOUND) unset.  Message: RT Library
+
+Call Stack (most recent call first):
+  /opt/ros/noetic/share/catkin/cmake/tools/rt.cmake:44 (assert_file_exists)
+  /opt/ros/noetic/share/catkin/cmake/all.cmake:164 (include)
+  /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:20 (include)
+  CMakeLists.txt:4 (find_package)
+
+
